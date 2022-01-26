@@ -11,3 +11,8 @@ Look at the corresponding readme for more information
 *Folder : ec2_provisioning_with_terraform*
 > You can provision/destroy an EC2 easily  
 Look at the corresponding readme for more information
+
+
+## Setup SonarQube to analyse a unity project
+*Folder : sonarqube_with_unity*
+> I will install and configure SonarQube on a MacOs then run an analysis on a project from start to end.
