@@ -6,7 +6,6 @@
 
 You need brew installed
 
-> 2022/01/21 Added a script to always output the url at the end
 
 ### Install docker and the SonarQube image then run the container
 ```sh
@@ -30,7 +29,7 @@ select create manually
 put a name (like UnityTest) ***I will use this name later***  
 click Setup  
 click locally
-enter a text to generate a token ***note the name as you cannot use it later***  
+enter a text to generate a token ***note the token for later***  
 Copy it for later use  
 Click continue  
 select .NET then .NET Framework  
@@ -86,7 +85,8 @@ mono /<path to sonar scan>/SonarScanner.MSBuild.exe end  /d:sonar.login="<your t
 ### Références
 
 ```
-Some references used
+Some references used for this project  
+
 https://numeriquement.fr/tutoriels/tutoriel_sonarqube.php
 
 https://medium.com/xrpractices/static-code-analysis-for-unity3d-part-1-a17e8e2a6c03
