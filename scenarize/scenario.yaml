@@ -1,0 +1,23 @@
+variables:
+  API_URL: "https://dummyjson.com/"
+  DEBUG_MODE: True
+
+actions:
+  - fetch_data: # will load fake data from dummyjson about a product and save it in var1
+    params:
+      api_call: "products/1"
+    artifact: 
+      var1:
+        - data
+  - process_data: # will fetch id title and brand from the data and store them in the variable var2
+    params:
+      data: "$var1.data"
+    artifact: 
+      var2:
+        - id
+        - title
+        - brand
+  - save_data_to_file: # will save the whole content of var2 in a file
+    params:
+      data: "$var2"
+      file_name: "output.json"

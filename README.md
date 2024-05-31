@@ -16,3 +16,7 @@ Look at the corresponding readme for more information
 ## Setup SonarQube to analyse a unity project
 *Folder : sonarqube_with_unity*
 > I will install and configure SonarQube on a MacOs then run an analysis on a project from start to end.
+> 
+## Scenarize with python and yaml
+*Folder : scenarize*
+> This project, built from a few of my other projects, is a base to scenarize different action. It can for example be used to automate a few steps or do some testing. Each steps can gather datas from others.
