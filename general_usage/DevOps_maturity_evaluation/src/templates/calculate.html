@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %}DevOps Evaluation Results{% endblock %}</h1>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <script>
+        var datas = {{ data|tojson }};
+        values = datas["values"]
+        fields = datas["fields"]
+        data = [{
+        type: 'scatterpolar',
+        r: values,
+        theta: fields,
+        fill: 'toself'
+      }]
+      
+      layout = {
+        polar: {
+          radialaxis: {
+            visible: true,
+            range: [0, 6]
+          }
+        },
+        showlegend: false
+      }
+      
+      Plotly.newPlot("myDiv", data, layout)
+    </script>
+     
+{% endblock %}

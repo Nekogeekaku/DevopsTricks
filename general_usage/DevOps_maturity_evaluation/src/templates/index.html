@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{% block title %}The DevOps Efficiency Matrix calculator {% endblock %}</h1>
+<h4>Get details on <a href="https://devopsefficiency.com">devopsefficiency website</a></h4>
+<p></p>
+    <form method="post" action="calculate">
+        {% for group in data['evaluate_data'] %}
+        <h2> {{group['Group_number']}}  {{group['Group_title']}} </h2>
+        <div class="row" >
+            <div class="three columns header-col" style="margin-left: 20px;">
+            {% for chapter in group['chapters'] %}
+                <div class="card border-primary mb-3" style="width: 70rem;">
+                <h5 class="card-header border-primary">
+                    {{chapter['Chapter_id']}}      {{chapter['Chapter_title']}}   
+                </h5>
+                
+                <div class="card-body">
+                    <p class="card-text">
+                        <select id="chapter_{{chapter['Chapter_id']}}" name="chapter_{{chapter['Chapter_id']}}" class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            {% for level in chapter['levels'] %}
+                            <option value="{{level['Level_id']}}">{{level['Level_qualifier']}}</option>            
+                            {% endfor %}
+                        </select>
+                    </p>
+                </div>
+                </div>
+            {% endfor %}
+            
+            </div>
+        </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+    </form> 
+
+
+
+ 
+{% endblock %}
